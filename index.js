@@ -171,7 +171,7 @@ class SvgUri extends Component{
         componentAtts.height = this.props.height;
       }
 
-      return <Svg key={i} {...componentAtts}>{childs}</Svg>;
+      return <Svg fill={this.props.color} key={i} {...componentAtts}>{childs}</Svg>;
     case 'g':
       componentAtts = this.obtainComponentAtts(node, G_ATTS);
       return <G key={i} {...componentAtts}>{childs}</G>;
@@ -311,6 +311,7 @@ SvgUri.propTypes = {
   svgXmlData: PropTypes.string,
   source: PropTypes.any,
   fill: PropTypes.string,
+  color: PropTypes.string,
   onLoad: PropTypes.func,
   fillAll: PropTypes.bool
 }
